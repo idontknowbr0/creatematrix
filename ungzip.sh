@@ -3,7 +3,7 @@
 # Loop through all .gz files in the current directory
 
 #change this path to single-cell donor/cell directory.
-export BASE_PATH="/Volumes/Lab_Group/BoltonFCS/Sophia/epi2me_output/single-cell/NP1695_don3"
+export BASE_PATH="path/to/single-cell/donor/folder"
 
 
 
