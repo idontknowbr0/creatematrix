@@ -2,10 +2,13 @@ import os
 import scipy.io
 import pandas as pd
 import numpy as np
-#import subprocess
+
+#conda install scipy pandas
+#pip install scipy pandas
 print("Creating matrix. This may take a while")
 def process_matrix(dir_path, output_file):
-    # Read the matrix
+
+        # Read the matrix
     dir_path = os.path.dirname(dir_path)
 
     mat = scipy.io.mmread(os.path.join(dir_path, "matrix.mtx")).tocsr()
@@ -43,8 +46,6 @@ gene_processed_path = base_path+"/gene_processed_feature_bc_matrix"
 gene_raw_path = base_path+"/gene_raw_feature_bc_matrix"
 transcript_processed_path = base_path+"/transcript_processed_feature_bc_matrix"
 transcript_raw_path = base_path+"/transcript_raw_feature_bc_matrix"
-
-#subprocess.call(['sh', '/Users/scheng/Documents/gzip_files.sh'])
 
 # Process gene-level data (directory)
 gene_processed = os.path.join(gene_processed_path, "gene_processed_feature_bc_matrix")
