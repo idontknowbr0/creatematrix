@@ -3,7 +3,7 @@
 # Loop through all .gz files in the current directory
 
 #change this path to single-cell donor/cell directory.
-export BASE_PATH="path/to/single-cell/donor/folder"
+export BASE_PATH="/Volumes/Lab_Group/BoltonFCS/Sophia/epi2me_output/single-cell/NP1695_don3"
 
 
 
@@ -11,6 +11,18 @@ dir=${BASE_PATH}/gene_processed_feature_bc_matrix
 dir2=${BASE_PATH}/gene_raw_feature_bc_matrix
 dir3=${BASE_PATH}/transcript_processed_feature_bc_matrix
 dir4=${BASE_PATH}/transcript_raw_feature_bc_matrix
+
+# Check if scipy and pandas are installed, install if not
+if ! conda list | grep -q "scipy"; then
+    echo "Installing scipy..."
+    conda install -y scipy
+fi
+
+if ! conda list | grep -q "pandas"; then
+    echo "Installing pandas..."
+    conda install -y pandas
+fi
+
 for file in "$dir"/*.gz; do
     # Check if the file exists (this is necessary to avoid errors if no .gz files are found)
     if [ -f "$file" ]; then
